@@ -20,19 +20,32 @@ def display_app_title():
     """
     st.markdown(f"## {ct.APP_NAME}")
 
-
+# 問題3_回答モードのラジオボタンをサイドバー表示に変更
+# ==========================================
+# def display_select_mode():
+#     """
+#     回答モードのラジオボタンを表示
+#     """
+#     # 回答モードを選択する用のラジオボタンを表示
+#     col1, col2 = st.columns([100, 1])
+#     with col1:
+#         # 「label_visibility="collapsed"」とすることで、ラジオボタンを非表示にする
+#         st.session_state.mode = st.radio(
+#             label="",
+#             options=[ct.ANSWER_MODE_1, ct.ANSWER_MODE_2],
+#             label_visibility="collapsed"
+#         )
+# ==========================================
 def display_select_mode():
     """
-    回答モードのラジオボタンを表示
+    回答モードのラジオボタンをサイドバーに表示
     """
-    # 回答モードを選択する用のラジオボタンを表示
-    col1, col2 = st.columns([100, 1])
-    with col1:
-        # 「label_visibility="collapsed"」とすることで、ラジオボタンを非表示にする
+    with st.sidebar:
+        st.markdown("### 利用目的を選択")
         st.session_state.mode = st.radio(
             label="",
             options=[ct.ANSWER_MODE_1, ct.ANSWER_MODE_2],
-            label_visibility="collapsed"
+            index=0,
         )
 
 

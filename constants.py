@@ -110,3 +110,10 @@ NO_DOC_MATCH_MESSAGE = """
 CONVERSATION_LOG_ERROR_MESSAGE = "過去の会話履歴の表示に失敗しました。"
 GET_LLM_RESPONSE_ERROR_MESSAGE = "回答生成に失敗しました。"
 DISP_ANSWER_ERROR_MESSAGE = "回答表示に失敗しました。"
+
+# ==========================================
+# 問題2_RAGパラメータ（チャンク分割や検索件数）を設定
+# ==========================================
+CHUNK_SIZE = 500            # チャンク1つのサイズ
+CHUNK_OVERLAP = 50          # チャンクの重なり
+RETRIEVER_TOP_K = 5         # 検索する関連ドキュメントの件数（k件）
