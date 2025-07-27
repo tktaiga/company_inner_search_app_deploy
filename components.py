@@ -41,7 +41,7 @@ def display_select_mode():
     回答モードのラジオボタンをサイドバーに表示
     """
     with st.sidebar:
-        st.markdown("### 利用目的を選択")
+        st.markdown("### 利用目的")
         st.session_state.mode = st.radio(
             label="",
             options=[ct.ANSWER_MODE_1, ct.ANSWER_MODE_2],
@@ -197,7 +197,7 @@ def display_search_llm_response(llm_response):
             # ページ番号を取得
             main_page_number = llm_response["context"][0].metadata["page"]
             # 「メインドキュメントのファイルパス」と「ページ番号」を表示
-            st.success(f"{main_file_path}", icon=icon)
+            st.success(f"{main_file_path}（ページNo.{main_page_number + 1}）", icon=icon) # 問題4_ページ数を表示
         else:
             # 「メインドキュメントのファイルパス」を表示
             st.success(f"{main_file_path}", icon=icon)
@@ -253,7 +253,7 @@ def display_search_llm_response(llm_response):
                 # ページ番号が取得できない場合のための分岐処理
                 if "page_number" in sub_choice:
                     # 「サブドキュメントのファイルパス」と「ページ番号」を表示
-                    st.info(f"{sub_choice['source']}", icon=icon)
+                    st.info(f"{sub_choice['source']}（ページNo.{sub_choice['page_number'] + 1}）", icon=icon) # 問題4_ページ数を表示
                 else:
                     # 「サブドキュメントのファイルパス」を表示
                     st.info(f"{sub_choice['source']}", icon=icon)
@@ -333,7 +333,7 @@ def display_contact_llm_response(llm_response):
                 # ページ番号を取得
                 page_number = document.metadata["page"]
                 # 「ファイルパス」と「ページ番号」
-                file_info = f"{file_path}"
+                file_info = f"{file_path}（ページNo.{page_number + 1}）" # 問題4_ページ数を表示
             else:
                 # 「ファイルパス」のみ
                 file_info = f"{file_path}"
