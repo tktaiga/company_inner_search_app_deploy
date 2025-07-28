@@ -81,7 +81,7 @@ def display_initial_ai_message():
         )
         
         # 変更点３：黄色枠の注意文を追加
-        st.warning("⚠️ 具体的に入力したほうが期待通りの回答を得やすいです。")
+        st.warning("具体的に入力したほうが期待通りの回答を得やすいです。")
 
     # 変更点２：サイドバーに利用例・説明を移動
     with st.sidebar:
